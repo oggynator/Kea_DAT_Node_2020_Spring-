@@ -30,3 +30,14 @@ var total = one + two + three;
 var avg = total/ 3;
 console.log(avg.toFixed(5));
 
+//Exercise 6
+
+var letters= "abc"
+console.log(letters.charAt(2))
+
+//Exercise 7 
+var fact = "You are learning javascript!";
+var newFact = fact.replace("j", "J")
+console.log(newFact);
+
+//or
