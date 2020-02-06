@@ -86,6 +86,7 @@ for (i=0; i < numbers.length; i++){
         discardedNumbers.push(numbers[i]);
     }
 }
+console.log("Discarded number: " , discardedNumbers);
 
 
 // --------------------------------------
