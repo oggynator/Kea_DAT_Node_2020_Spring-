@@ -39,5 +39,3 @@ console.log(letters.charAt(2))
 var fact = "You are learning javascript!";
 var newFact = fact.replace("j", "J")
 console.log(newFact);
-
-//or
