@@ -31,11 +31,37 @@ app.get("/aboutThisWebsite", (req,res)=>{
     res.send(aboutThisWebsite);
 })
 
+app.get("/date", (req, res)=>{
+
+
+    let date = new Date();
+    let day = String(date.getDay());
+    let dateInfo = String(date.getDate());
+    let month = String(date.getMonth() + 1);
+    let year = String(date.getFullYear());
+    let weekday = new Array(7);
+    weekday[0] = "Sunday";
+    weekday[1] = "Monday";
+    weekday[2] = "Tuesday";
+    weekday[3] = "Wednesday";
+    weekday[4] = "Thursday";
+    weekday[5] = "Friday";
+    weekday[6] = "Saturday";
+
+    let n = weekday[date.getDay()];
+    let today = "Day:"+ n + " " + dateInfo+ "/" + month+ "/" + year;
+
+    res.send(today)
+})
+
+
+
+
 app.listen(3000, error=>{
     if(error){
         console.error(error);
     }
-    console.error("Server is running on port:", 3000);
+    console.error("Server is alive and running on port:", 3000);
     
 });
 
