@@ -31,6 +31,15 @@ app.get("/aboutThisWebsite", (req,res)=>{
     res.send(aboutThisWebsite);
 })
 
+const weekdays = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday" ]
+
 app.get("/date", (req, res)=>{
 
 
@@ -39,23 +48,26 @@ app.get("/date", (req, res)=>{
     let dateInfo = String(date.getDate());
     let month = String(date.getMonth() + 1);
     let year = String(date.getFullYear());
-    let weekday = new Array(7);
-    weekday[0] = "Sunday";
-    weekday[1] = "Monday";
-    weekday[2] = "Tuesday";
-    weekday[3] = "Wednesday";
-    weekday[4] = "Thursday";
-    weekday[5] = "Friday";
-    weekday[6] = "Saturday";
+    let n = weekdays[date.getDay()];
+    let today =  dateInfo+ "/" + month+ "/" + year;
 
-    let n = weekday[date.getDay()];
-    let today = "Day:"+ n + " " + dateInfo+ "/" + month+ "/" + year;
+    return res.send({
+        weekday: n,
+        date: today
+    });
+});
 
-    res.send(today)
-})
+app.get("/user/:id",(req, res)=>{
+    console.log(req.params);
+    return res.send({
+        ID: req.params.id
+    });
+});
 
+app.get("/search/", (req,res)=>{
 
-
+    return res.send(req.query);
+});
 
 app.listen(3000, error=>{
     if(error){
