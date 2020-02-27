@@ -50,7 +50,6 @@ $('.used-box').click(function() {
 });
 
 
-
 });
 
 
