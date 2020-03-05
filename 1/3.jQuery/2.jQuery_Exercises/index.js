@@ -1,6 +1,6 @@
 
 //Align text to center
-$( document ).ready(function() {
+$( document ).ready(()=> {
     $("body").css("text-align","center");
 
 
@@ -48,6 +48,24 @@ $( ".unused-box" ).removeClass("unused-box").addClass("used-box");
 $('.used-box').click(function() {
     $(".used-box").toggleClass("used-boxed-clicked");
 });
+
+//Change title when hovering over
+$('#submit-button').hover(()=> {
+    $( "#submit-button" ).text(  "You're ready to click." );
+},
+()=> {
+    $( "#submit-button" ).text(  "click." );  
+});
+
+//Add reasons to list
+let i = 4;
+$('#submit-button').click(()=> {
+    $("#first-list").append("<li>Reason"+i+"</li>");
+    i++;
+
+    console.log($(event.currentTarget).parent());
+});
+
 
 
 });
