@@ -1,0 +1,16 @@
+For at åbne mongo shell: CD ind i mappen --> mongo i cmd (huske at starte mongodb service)
+
+Shows dbs - viser databaseruse DATABASENAME - opretter og skifter til den nye database
+db.createCollection("COLLECTIONNAME");  - laver en ny collection
+db.COLLECTIONNAME.insert({key: "value"}); - indsætter et key value pair i den valgte collection
+db.COLLECTIONNAME.find(); - finds everything in collectiondb.COLLECTIONNAME.find(key: "value"); -  find the key value pair
+
+
+
+Robomongo kan bruges som GUI.
+Mongoose konvertere fra mongoDB til et javascript objekt.
+
+ORM:
+you define your objects as entities
+and the ORM creates the table structure according to that
+
